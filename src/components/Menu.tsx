@@ -42,18 +42,18 @@ const Menu: React.FC = () => {
                 {menuItems
                   .filter(item => item.category === category.id)
                   .map(item => (
-                    <Card key={item.id} className="overflow-hidden group hover-scale">
-                      <div className="aspect-video bg-muted overflow-hidden">
+                    <Card key={item.id} className="overflow-hidden group hover-scale border-coffee/10">
+                      <div className="aspect-video overflow-hidden">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                       <CardHeader className="pb-2">
                         <CardTitle className="flex justify-between items-center">
                           <span>{item.name}</span>
-                          <span className="text-coffee">${item.price.toFixed(2)}</span>
+                          <span className="text-coffee font-bold">${item.price.toFixed(2)}</span>
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
@@ -62,7 +62,7 @@ const Menu: React.FC = () => {
                       <CardFooter>
                         <Button 
                           onClick={() => addToCart(item)} 
-                          className="w-full bg-coffee hover:bg-coffee-dark"
+                          className="w-full bg-coffee hover:bg-coffee-dark text-white"
                         >
                           <PlusCircle className="h-4 w-4 mr-2" />
                           Add to Order

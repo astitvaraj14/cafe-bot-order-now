@@ -7,13 +7,23 @@ const Hero: React.FC = () => {
   const { toggleChat } = useStore();
   
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-cream to-background">
-      <div className="container px-4 md:px-6 mx-auto flex flex-col items-center text-center space-y-8">
+    <section className="w-full py-12 md:py-24 lg:py-32 relative">
+      {/* Hero background image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+          alt="Café atmosphere" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-coffee-dark/70 to-background/90"></div>
+      </div>
+      
+      <div className="container px-4 md:px-6 mx-auto flex flex-col items-center text-center space-y-8 relative z-10">
         <div className="animate-fade-in space-y-3">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-coffee-dark">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
             Smart Café Ordering
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-[700px] mx-auto">
+          <p className="text-xl md:text-2xl text-cream max-w-[700px] mx-auto">
             Order your favorite coffee and food with our AI-powered chatbot or browse our menu
           </p>
         </div>
@@ -29,15 +39,20 @@ const Hero: React.FC = () => {
           <Button 
             variant="outline" 
             size="lg"
-            className="border-coffee text-coffee hover:bg-coffee-light/10"
+            className="border-cream text-cream hover:bg-cream/10"
             asChild
           >
             <a href="#menu">Browse Menu</a>
           </Button>
         </div>
         
-        <div className="relative w-full max-w-3xl mx-auto mt-8 lg:mt-16 aspect-video rounded-lg overflow-hidden shadow-xl animate-scale-in">
-          <div className="absolute inset-0 bg-coffee/10 flex items-center justify-center">
+        <div className="relative w-full max-w-3xl mx-auto mt-8 lg:mt-16 rounded-lg overflow-hidden shadow-xl animate-scale-in">
+          <img 
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
+            alt="Coffee being prepared"
+            className="w-full h-full object-cover aspect-video"
+          />
+          <div className="absolute inset-0 bg-coffee/30 flex items-center justify-center">
             <div className="p-8 bg-background/90 rounded-lg backdrop-blur-sm shadow-lg">
               <p className="text-xl font-semibold text-coffee">
                 "The smartest way to order your coffee"

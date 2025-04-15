@@ -1,13 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import React from "react";
+import { StoreProvider } from "@/context/StoreContext";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Menu from "@/components/Menu";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
+import Cart from "@/components/Cart";
+import ChatBot from "@/components/ChatBot";
+
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <StoreProvider>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        
+        <main className="flex-1">
+          <Hero />
+          <Menu />
+          <About />
+        </main>
+        
+        <Footer />
+        
+        {/* Panels that can be toggled */}
+        <Cart />
+        <ChatBot />
       </div>
-    </div>
+    </StoreProvider>
   );
 };
 
